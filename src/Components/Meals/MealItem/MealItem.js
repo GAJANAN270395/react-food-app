@@ -3,6 +3,10 @@ import classes from './MealItem.module.css';
 import MealItemForm from './MealItemForm';
 
 const MealItem = (props) => {
+  const addToCartHandler = () => {
+    console.log('Called from MealItem');
+  };
+
   return (
     <li className={classes.meal}>
       <div>
@@ -11,7 +15,7 @@ const MealItem = (props) => {
         <div className={classes.price}>₹{props.price}</div>
       </div>
       <div>
-        <MealItemForm />
+        <MealItemForm onAddToCart={addToCartHandler} />
       </div>
     </li>
   );
